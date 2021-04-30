@@ -1,0 +1,150 @@
+@import "Reset.scss";
+
+
+@mixin for-phone-only {
+    @media (max-width: 600px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+}
+
+@include for-phone-only {
+
+}
+@include for-tablet-portrait-up {
+
+}
+@include for-tablet-landscape-up {
+
+}
+@include for-desktop-up {
+
+}
+@include for-big-desktop-up {
+
+}
+
+
+body {
+    margin: 0 auto;
+    font-family: Nunito;
+    font-weight: 300;
+    max-width: 1400px;
+    background-color: #F9FBFF;
+}
+
+html.lock {
+    overflow: hidden;
+}
+@media (max-width: 779px) {
+}
+h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 34px;
+    color: #415167;
+}
+@mixin price {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #C7A17A;
+}
+
+@mixin text {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: #151D28;
+}
+
+@mixin item__button ($w, $h, $mR, $jc, $mT, $fs-buy, $fs-detail, $mRdetail) {
+    .item__button {
+        display: flex;
+        justify-content: $jc;
+        margin-top: $mT;
+        .button_buy {
+            background: #C7A17A;
+            border-radius: 19px;
+            font-weight: bold;
+            font-size: $fs-buy;
+            line-height: 22px;
+            text-align: center;
+            color: #F9FBFF;
+            border:0;
+            width: $w ;
+            height: $h ;
+            margin-right: $mR;
+        }
+        .button_detail {
+            font-weight: bold;
+            font-size: $fs-detail;
+            line-height: 22px;
+            color: #415167;
+            border: 0;
+            background-color:transparent;
+            margin-right: $mRdetail;
+        }
+    }
+
+    .button_buy:hover {
+        background-color: #cead8b;
+    }
+    .button_buy:active {
+        background-color: #bb8d5e;
+    }
+
+    .button_detail:hover {
+        color: #627a9b;
+    }
+    .button_detail:active {
+        color: #39475a;
+    }
+    @content;
+}
+
+@mixin item__button__dopStyle ($mB_1, $mB_2, $mB_3) {
+    .price {
+        margin-bottom: $mB_1 ;
+    }
+    .item__content h3 {
+        margin-bottom: $mB_2 ;
+    }
+    .product_info {
+        margin-bottom: $mB_3 ;
+    }
+}
+
+@mixin flickity-prev-next-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #C7A17A;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.block__row{
+display:flex;
+flex-direction:column;
+}
+
+
+
+@import "styleHeader.scss";
+
+@import "styleMain.scss";
+
+@import "styleFooter.scss";

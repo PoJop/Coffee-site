@@ -1,0 +1,13 @@
+main{
+    flex: 1 1 auto;
+    margin-top: clamp(40px, 7vmax, 87px);
+
+    @import "./mainSection/main__Coffee.scss";
+
+    @import "./mainSection/main__Packaging.scss";
+
+    @import "./mainSection/main__Set.scss";
+
+    @import "./mainSection/main__ComboPhin.scss";
+}
+

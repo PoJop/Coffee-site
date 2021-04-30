@@ -1,0 +1,173 @@
+
+.main__ComboPhin {
+ max-width: 100%;
+ margin: 0 auto;
+ background: linear-gradient(-90deg, #415167 0%, #415167 23.3%, transparent 0%);
+ padding-top: 90px;
+
+ .main__ComboPhin_Heading {
+  margin: 0 auto;
+  text-align: center;
+ }
+ .main__ComboPhin_Heading p {
+  font-weight: 600;
+  
+  color: #415167;
+  margin-bottom: 6px;
+ }
+ .flickity-button {
+    background: #333;
+  }
+  .flickity-button:hover {
+    background: #F90;
+  }
+
+  .flickity-prev-next-button {
+    @include flickity-prev-next-button;
+   
+  }
+  /* icon color */
+  .flickity-button-icon {
+    fill: white;
+  }
+  /* position outside */
+  .flickity-prev-next-button.previous {
+    left: 66px;
+    transform: translate(0px, -50px);
+  }
+  .flickity-prev-next-button.next {
+    right: 66px;
+    transform: translate(0px, -50px);
+  }
+
+
+  * { box-sizing: border-box; }
+
+  body { font-family: sans-serif; }
+
+  .carousel {
+    background: #EEE;
+    margin-top: 63px;
+  }
+
+  .carousel-cell:nth-child(even) {
+    opacity: 0.3;
+  }
+
+  .carousel-cell {
+    width: 360px;
+    height: 562px;
+    margin-right: 30px;
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    counter-increment: carousel-cell;
+
+
+    .slider__item-container {
+
+      .img__wrapper {
+        object-fit: cover;
+        object-position: cover;
+      }
+
+      .item__wrapper {
+        margin: 39px 42px 0px 42px;
+
+        .item__content {
+
+          .prices {
+            display: flex;
+            .price {
+              @include price;
+            }
+
+            .price_crossed_out {
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 19px;
+              text-decoration-line: line-through;
+              color: #415167;
+              padding: 4px 0px 0px 17px;
+            }
+          }
+          .product_info {
+            @include text;
+          }
+        }
+        .item__content h3 {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 28px;
+          color: #232C38;
+        }
+        @include item__button (134px, 32px, 56px, flex-start, 10px, 16px, 16px, 0px);
+        @include item__button__dopStyle (9px, 9px, 32px);
+        .item__button .button_detail{
+          transform: translate(0px, 4px);
+        }
+      }
+    }
+  }
+
+  .carousel-cell:hover {
+    filter: drop-shadow(0px 4px 24px rgba(205, 205, 205, 0.5));
+  }
+
+  .carousel-cell.is-selected{
+    opacity: 1;
+  }
+
+  /* cell number */
+
+  .flickity-page-dots .dot {
+    opacity: 0;
+  }
+  .flickity-slider {
+    left: 0;
+    width: 100%;
+  }
+
+  .flickity-enabled {
+    background:rgba(41, 41, 41, 0);
+    left: 0;
+  }
+}
+
+
+@include for-phone-only {
+  .main__ComboPhin {
+    padding-bottom: 28px;
+  }
+  
+  .main__ComboPhin_Heading h2 {
+    font-size: clamp(15px, 5vw, 30px);
+  }
+  .main__ComboPhin_Heading p {
+    font-size: clamp(10px, 4vw, 20px);
+    line-height: 0px;
+  }
+  .main__ComboPhin_Heading {
+    padding-right: 24%;
+  }
+}
+@include for-tablet-portrait-up {
+  .main__ComboPhin {
+    padding-bottom: 128px;
+  }
+  .main__ComboPhin_Heading {
+    padding-right: 12px;
+  }
+  .main__ComboPhin_Heading p {
+    font-size: 20px;
+    line-height: 24px;
+   }
+}
+@include for-tablet-landscape-up {
+
+}
+@include for-desktop-up {
+
+}
+@include for-big-desktop-up {
+
+}
